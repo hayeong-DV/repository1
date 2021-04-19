@@ -9,13 +9,12 @@ c.connect(('localhost', port))
 while True:
     request = input('send or receive +num +string: ')
     if request == "quit":
-        c.send(request.encode())
+        c.sendto(request.encode())
         break
 
     c.send(request.encode())
-    recv = c.recv(BUFFSIZE)
-    data = recv.decode()
-
+    recvData, addr = c.recvfrom(BUFFSIZE)
+    data = recvData.decode()
     print(data)
 
 c.close()
