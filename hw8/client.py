@@ -1,7 +1,7 @@
 from socket import *
 
-BUFFSIZE = 1024
-port = 2500
+BUFFSIZE =1024
+port =2500
 
 c = socket(AF_INET, SOCK_DGRAM)
 c.connect(('localhost', port))
